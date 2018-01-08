@@ -27,9 +27,15 @@ class EmailSubscribePlugin extends Plugin{
    */
   public static function getSubscribedEvents(){
     return [
-      'onTask.subscribe.mailchimp'   => ['task_subscribe_mailchimp', 0]
+      'onTask.subscribe.mailchimp'   => ['task_subscribe_mailchimp', 0],
+      'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0]
     ];
   }
+
+  public function onTwigTemplatePaths(){
+      $this->grav['twig']->twig_paths[] = __DIR__ . '/templates';
+  }
+
 
   public function task_subscribe_mailchimp(Event $event){
     $uri = $this->grav['uri'];
