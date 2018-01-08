@@ -1,0 +1,39 @@
+<form class="form signup" action="{{ base_url_relative ~ uri.path }}" method="POST">
+  <div class="form-wrapper">
+    <div class="row no-gutters form-items">
+      <div class="col">
+        <input type="email" name="subscribe_email" value="" class="form-control form-input signup-input" placeholder="your email">
+      </div>
+      <div class="col form-button-wrapper">
+        <input type="hidden" name="task" value="subscribe.mailchimp">
+        {% if list %}
+          <input type="hidden" name="mailchimp_list" value="{{list}}">
+        {% endif %}
+        {% if groups %}
+          <input type="hidden" name="mailchimp_groups" value="{{groups}}">
+        {% endif %}
+        {% if groups %}
+          <input type="hidden" name="mailchimp_source" value="{{source}}">
+        {% endif %}
+        {{ nonce_field('subscribe-form', 'subscribe-form-nonce')|raw }}
+        <button type="submit" class="form-button signup-button">
+          {% include 'partials/icons/right-arrow.svg.twig' with {'stroke': color, 'fill': 'transparent'} %}
+        </button>
+      </div>
+    </div>
+    <div class="form-sending">
+      {% include 'partials/icons/spinner.svg.twig' with {'stroke': color, 'fill': color} %}
+    </div>
+    <div class="form-done">
+      <div class="form-done-message">
+        <p>
+        {% if message %}
+          {{message}}
+        {% else %}
+          Thanks, we've got you subscribed!
+        {% endif %}
+        </p>
+      </div>
+    </div>
+  </div>
+</form>

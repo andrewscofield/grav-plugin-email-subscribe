@@ -5,10 +5,10 @@ icon: plug
 author:
   name: Andrew Scofield
   email: andrew@andrewscofield.com
-homepage: https://github.com/apotropaic/grav-plugin-email-subscribe
+homepage: https://github.com/andrewscofield/grav-plugin-email-subscribe
 keywords: grav, plugin, etc
-bugs: https://github.com/apotropaic/grav-plugin-email-subscribe/issues
-docs: https://github.com/apotropaic/grav-plugin-email-subscribe/blob/develop/README.md
+bugs: https://github.com/andrewscofield/grav-plugin-email-subscribe/issues
+docs: https://github.com/andrewscofield/grav-plugin-email-subscribe/blob/develop/README.md
 license: MIT
 
 form:
